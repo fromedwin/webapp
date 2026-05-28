@@ -8,11 +8,22 @@ const config: ShellUIConfig = {
   logo: '/logo.svg',
   layout: 'sidebar',
   language: 'en',
+  start_url: '/home',
+  backend: {
+    type: 'shellui',
+    url: 'https://id.shellui.com',
+    companyId: 3,
+    login: {
+      methods: ['oauth'],
+      oauthProviders: ['github'],
+    },
+  },
   navigation: [
     {
       label: 'Home',
       path: 'home',
       url: '/',
+      requiresAuth: true,
     },
     {
       label: 'Settings',
@@ -20,6 +31,7 @@ const config: ShellUIConfig = {
       url: urls.settings,
       openIn: 'modal',
       position: 'end',
+      requiresAuth: true,
     },
   ],
 };

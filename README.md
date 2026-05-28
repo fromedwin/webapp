@@ -24,11 +24,17 @@ pnpm run build
 
 Output is written to `dist/`, including SPA fallbacks (`404.html`, route folders) and a service worker. Static files from `static/` (favicon, logo, `CNAME`, etc.) are copied into `dist/` during the build.
 
+## Authentication
+
+All navigation routes require sign-in. Authentication uses the ShellUI identity service at [id.shellui.com](https://id.shellui.com) (company ID `3`), configured in `shellui.config.ts` via `backend.type: 'shellui'`. Unauthenticated visitors are redirected to `/login` and returned to their original URL after signing in.
+
+Sign-in is GitHub OAuth only (`backend.login` in `shellui.config.ts`). Provider details are also validated against the identity service at runtime.
+
 ## Configuration
 
 | File | Purpose |
 |------|---------|
-| `shellui.config.ts` | App title, layout, navigation, theme, and other ShellUI options |
+| `shellui.config.ts` | App title, layout, navigation, auth backend, and other ShellUI options |
 | `static/` | Assets served at the site root (`/favicon.svg`, `/logo.svg`, …) |
 
 See the [ShellUI documentation](https://shellui.com/) for available config options.
