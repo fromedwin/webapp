@@ -8,6 +8,11 @@
     "build": "shellui build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
