@@ -10,7 +10,7 @@ const config: ShellUIConfig = {
   logo: "/logo.svg",
   layout: "sidebar",
   language: "en",
-  start_url: "/",
+  start_url: "",
   backend: {
     type: "shellui",
     url: "https://id.shellui.com",
@@ -22,6 +22,12 @@ const config: ShellUIConfig = {
     },
   },
   navigation: [
+    {
+      label: "FromEdwin",
+      path: "",
+      url: "https://fromedwin.com",
+      requiresAuth: true,
+    },
     {
       label: "Settings",
       path: "settings",
