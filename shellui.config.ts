@@ -3,6 +3,16 @@ import urls from "@shellui/core/constants/urls";
 
 declare const process: { env: Record<string, string | undefined> };
 
+const isBuild =
+  process.env.NODE_ENV === "production" ||
+  process.env.SHELLUI_BUILD === "true";
+
+const appUrl =
+  process.env.SHELLUI_APP_URL ??
+  (isBuild
+    ? "/app/"
+    : `http://localhost:${process.env.SHELLUI_APP_PORT || "5173"}`);
+
 const config: ShellUIConfig = {
   port: 4000,
   title: "FromEdwin",
@@ -25,7 +35,7 @@ const config: ShellUIConfig = {
     {
       label: "FromEdwin",
       path: "",
-      url: "https://fromedwin.com",
+      url: `${appUrl.replace(/\/$/, "")}/`,
       requiresAuth: true,
     },
     {

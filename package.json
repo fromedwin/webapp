@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "shellui start",
-    "build": "shellui build",
+    "dev": "pnpm -C app dev",
+    "build": "shellui build && pnpm -C app build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "pnpm": {
