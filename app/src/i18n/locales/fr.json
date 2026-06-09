@@ -1,0 +1,33 @@
+{
+  "welcome": {
+    "title": "FromEdwin Monitor",
+    "subtitle": "Surveillance complète avec une interface web sans code.",
+    "signedInAs": "Connecté en tant que {{name}}"
+  },
+  "features": {
+    "availability": {
+      "title": "Disponibilité",
+      "description": "Suivez la disponibilité des sites et services en temps réel."
+    },
+    "performance": {
+      "title": "Performance",
+      "description": "Surveillez les temps de réponse et les métriques Lighthouse."
+    },
+    "alerting": {
+      "title": "Alertes",
+      "description": "Recevez des notifications lors d'incidents sur vos projets."
+    },
+    "api": {
+      "title": "API REST",
+      "description": "Gérez projets, pages et incidents par programmation."
+    }
+  },
+  "actions": {
+    "openDocs": "Documentation API",
+    "viewDashboard": "Ouvrir le tableau de bord"
+  },
+  "status": {
+    "loading": "Connexion à ShellUI…",
+    "standalone": "Exécution hors ShellUI — thème et langue par défaut."
+  }
+}

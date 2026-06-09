@@ -4,8 +4,7 @@ import urls from "@shellui/core/constants/urls";
 declare const process: { env: Record<string, string | undefined> };
 
 const isBuild =
-  process.env.NODE_ENV === "production" ||
-  process.env.SHELLUI_BUILD === "true";
+  process.env.NODE_ENV === "production" || process.env.SHELLUI_BUILD === "true";
 
 const appUrl =
   process.env.SHELLUI_APP_URL ??
@@ -18,7 +17,7 @@ const config: ShellUIConfig = {
   title: "FromEdwin",
   favicon: "/favicon.svg",
   logo: "/logo.svg",
-  layout: "sidebar",
+  layout: "fullscreen",
   language: "en",
   start_url: "",
   backend: {

@@ -1,0 +1,33 @@
+{
+  "welcome": {
+    "title": "FromEdwin Monitor",
+    "subtitle": "Comprehensive monitoring with a no-code web interface.",
+    "signedInAs": "Signed in as {{name}}"
+  },
+  "features": {
+    "availability": {
+      "title": "Availability",
+      "description": "Track website uptime and service availability in real time."
+    },
+    "performance": {
+      "title": "Performance",
+      "description": "Monitor response times and Lighthouse performance metrics."
+    },
+    "alerting": {
+      "title": "Alerting",
+      "description": "Get notified when incidents occur across your projects."
+    },
+    "api": {
+      "title": "REST API",
+      "description": "Manage projects, pages, and incidents programmatically."
+    }
+  },
+  "actions": {
+    "openDocs": "API documentation",
+    "viewDashboard": "Open dashboard"
+  },
+  "status": {
+    "loading": "Connecting to ShellUI…",
+    "standalone": "Running outside ShellUI — using default theme and language."
+  }
+}
