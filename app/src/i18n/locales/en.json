@@ -29,5 +29,14 @@
   "status": {
     "loading": "Connecting to ShellUI…",
     "standalone": "Running outside ShellUI — using default theme and language."
+  },
+  "nav": {
+    "account": "Account",
+    "accountLoading": "Loading account…",
+    "openAccountMenu": "Open account menu for {{name}}",
+    "settings": "Settings",
+    "admin": "Administration",
+    "logout": "Log out",
+    "staffBadge": "Staff"
   }
 }

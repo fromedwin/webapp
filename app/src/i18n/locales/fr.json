@@ -29,5 +29,14 @@
   "status": {
     "loading": "Connexion à ShellUI…",
     "standalone": "Exécution hors ShellUI — thème et langue par défaut."
+  },
+  "nav": {
+    "account": "Compte",
+    "accountLoading": "Chargement du compte…",
+    "openAccountMenu": "Ouvrir le menu du compte pour {{name}}",
+    "settings": "Paramètres",
+    "admin": "Administration",
+    "logout": "Se déconnecter",
+    "staffBadge": "Équipe"
   }
 }

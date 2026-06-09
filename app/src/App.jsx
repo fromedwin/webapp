@@ -16,6 +16,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
+import { UserNavBar } from '@/components/UserNavBar';
 import { useShellUI } from '@/providers/ShellUIProvider';
 
 const FEATURES = [
@@ -45,7 +46,9 @@ export default function App() {
   const user = settings?.user;
 
   return (
-    <main className="mx-auto flex min-h-screen w-full max-w-5xl flex-col gap-8 p-6 md:p-10">
+    <div className="flex min-h-screen flex-col overflow-visible">
+      <UserNavBar />
+      <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col gap-8 p-6 md:p-10">
       <header className="flex flex-col gap-4">
         <div className="flex flex-wrap items-center gap-3">
           <Badge variant="secondary">FromEdwin</Badge>
@@ -109,6 +112,7 @@ export default function App() {
           </Button>
         </CardContent>
       </Card>
-    </main>
+      </main>
+    </div>
   );
 }
