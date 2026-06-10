@@ -23,7 +23,8 @@ const config: ShellUIConfig = {
   backend: {
     type: "shellui",
     url: "https://id.shellui.com",
-    adminUrl: "https://admin.shellui.com",
+    adminPathname: urls.admin,
+    adminUrl: shelluiAdminUrl,
     companyId: process.env.SHELLUI_BUILD === "true" ? 3 : 1,
     login: {
       methods: ["oauth"],
