@@ -24,7 +24,6 @@ const config: ShellUIConfig = {
     type: "shellui",
     url: "https://id.shellui.com",
     adminPathname: urls.admin,
-    adminUrl: shelluiAdminUrl,
     companyId: process.env.SHELLUI_BUILD === "true" ? 3 : 1,
     login: {
       methods: ["oauth"],
