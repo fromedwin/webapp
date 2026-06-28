@@ -28,7 +28,12 @@
   },
   "status": {
     "loading": "Connecting to ShellUI…",
-    "standalone": "Running outside ShellUI — using default theme and language."
+    "standalone": "Running outside ShellUI — using default theme and language.",
+    "backendLoading": "Connecting to backend at {{url}}…",
+    "backendConnected": "Backend at {{url}} authenticated as {{email}}.",
+    "backendError": "Could not reach backend at {{url}}.",
+    "backendWaiting": "Waiting for ShellUI session before calling the backend.",
+    "backendNotConfigured": "Set VITE_BACKEND_URL to connect to the FromEdwin API."
   },
   "nav": {
     "account": "Account",

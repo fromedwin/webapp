@@ -22,7 +22,7 @@ const config: ShellUIConfig = {
   start_url: "",
   backend: {
     type: "shellui",
-    url: "https://id.shellui.com",
+    url: process.env.SHELLUI_JWT_ORIGIN ?? "https://id.shellui.com",
     adminPathname: urls.admin,
     companyId: process.env.SHELLUI_BUILD === "true" ? 3 : 1,
     login: {

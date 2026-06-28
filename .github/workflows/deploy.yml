@@ -40,6 +40,7 @@ jobs:
         env:
           SHELLUI_BUILD: "true"
           NODE_ENV: production
+          VITE_BACKEND_URL: https://fromedwin.com
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

@@ -16,7 +16,9 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { UserNavBar } from "@/components/UserNavBar";
+import { useBackendUser } from "@/hooks/useBackendUser";
 import { useShellUI } from "@/providers/ShellUIProvider";
+import { BACKEND_BASE_URL } from "@/lib/config";
 
 const FEATURES = [
   {
@@ -37,12 +39,11 @@ const FEATURES = [
   },
 ];
 
-const backendBase = (import.meta.env.VITE_BACKEND_URL ?? "").replace(/\/$/, "");
-
 export default function App() {
   const { t } = useTranslation();
   const { ready, settings, isEmbedded } = useShellUI();
-  const user = settings?.user;
+  const shellUser = settings?.user;
+  const { user: backendUser, error: backendError, loading: backendLoading } = useBackendUser();
 
   return (
     <div className="flex min-h-screen flex-col overflow-visible">
@@ -63,11 +64,27 @@ export default function App() {
               {t("welcome.subtitle")}
             </p>
           </div>
-          {user?.name || user?.email ? (
+          {shellUser?.name || shellUser?.email ? (
             <p className="text-sm text-muted-foreground">
-              {t("welcome.signedInAs", { name: user.name ?? user.email })}
+              {t("welcome.signedInAs", { name: shellUser.name ?? shellUser.email })}
             </p>
           ) : null}
+          {BACKEND_BASE_URL ? (
+            <p className="text-sm text-muted-foreground">
+              {backendLoading
+                ? t("status.backendLoading", { url: BACKEND_BASE_URL })
+                : backendError
+                  ? t("status.backendError", { url: BACKEND_BASE_URL })
+                  : backendUser
+                    ? t("status.backendConnected", {
+                        url: BACKEND_BASE_URL,
+                        email: backendUser.email ?? backendUser.username,
+                      })
+                    : t("status.backendWaiting")}
+            </p>
+          ) : (
+            <p className="text-sm text-muted-foreground">{t("status.backendNotConfigured")}</p>
+          )}
           {!ready ? (
             <p className="text-sm text-muted-foreground">
               {t("status.loading")}

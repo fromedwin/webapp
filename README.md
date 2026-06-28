@@ -30,11 +30,24 @@ All navigation routes require sign-in. Authentication uses the ShellUI identity 
 
 Sign-in is GitHub OAuth only (`backend.login` in `shellui.config.ts`). Provider details are also validated against the identity service at runtime.
 
+## Backend API
+
+The embedded React app calls the FromEdwin Django API using the ShellUI JWT (`settings.accessToken`) as a Bearer token.
+
+| Variable | Development | Production |
+|----------|-------------|------------|
+| `VITE_BACKEND_URL` | `http://localhost:8000` | `https://fromedwin.com` |
+
+Defaults are set in `app/.env.development` and `app/.env.production`. Override at build time (see `.github/workflows/deploy.yml`).
+
+Use `app/src/lib/api.js` (`apiFetch`) and `app/src/hooks/useBackendUser.js` as references when adding API calls.
+
 ## Configuration
 
 | File | Purpose |
 |------|---------|
 | `shellui.config.ts` | App title, layout, navigation, auth backend, and other ShellUI options |
+| `app/.env.development` / `app/.env.production` | `VITE_BACKEND_URL` for the FromEdwin API |
 | `static/` | Assets served at the site root (`/favicon.svg`, `/logo.svg`, …) |
 
 See the [ShellUI documentation](https://shellui.com/) for available config options.
