@@ -18,7 +18,7 @@ const config: ShellUIConfig = {
   favicon: "/favicon.svg",
   logo: "/logo.svg",
   layout: "fullscreen",
-  language: "en",
+  language: ["en", "fr"],
   start_url: "",
   backend: {
     type: "shellui",
@@ -38,7 +38,7 @@ const config: ShellUIConfig = {
       requiresAuth: true,
     },
     {
-      label: "Payments",
+      label: { en: "Payments", fr: "Paiements" },
       path: "payments",
       url: `${appUrl.replace(/\/$/, "")}/settings/payments`,
       settings: `${appUrl.replace(/\/$/, "")}/settings/payments`,
@@ -47,7 +47,7 @@ const config: ShellUIConfig = {
       requiresAuth: true,
     },
     {
-      label: "Settings",
+      label: { en: "Settings", fr: "Paramètres" },
       path: "settings",
       url: urls.settings,
       openIn: "modal",

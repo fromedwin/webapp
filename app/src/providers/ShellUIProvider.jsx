@@ -27,6 +27,10 @@ function applySettings(settings) {
   if (language && i18n.language !== language) {
     i18n.changeLanguage(language);
   }
+
+  if (language && typeof document !== 'undefined') {
+    document.documentElement.lang = language;
+  }
 }
 
 export function ShellUIProvider({ children }) {
