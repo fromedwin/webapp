@@ -35,6 +35,13 @@
     "backendWaiting": "Waiting for ShellUI session before calling the backend.",
     "backendNotConfigured": "Set VITE_BACKEND_URL to connect to the FromEdwin API."
   },
+  "settings": {
+    "payments": {
+      "title": "Payments",
+      "description": "Manage your FromEdwin plan and billing.",
+      "placeholder": "Payment management is coming soon."
+    }
+  },
   "nav": {
     "account": "Account",
     "accountLoading": "Loading account…",

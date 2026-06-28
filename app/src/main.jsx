@@ -2,7 +2,12 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { I18nextProvider } from 'react-i18next';
 import App from '@/App.jsx';
+import SettingsApp from '@/SettingsApp.jsx';
 import i18n from '@/i18n';
+
+function isSettingsRoute() {
+  return /\/settings(\/|$)/.test(window.location.pathname);
+}
 import { ensureShellUIInitialized } from '@/lib/shellui-init';
 import { ShellUIProvider } from '@/providers/ShellUIProvider';
 import '@/index.css';
@@ -14,7 +19,7 @@ async function bootstrap() {
     <StrictMode>
       <I18nextProvider i18n={i18n}>
         <ShellUIProvider>
-          <App />
+          {isSettingsRoute() ? <SettingsApp /> : <App />}
         </ShellUIProvider>
       </I18nextProvider>
     </StrictMode>,

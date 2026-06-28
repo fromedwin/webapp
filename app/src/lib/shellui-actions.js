@@ -8,6 +8,11 @@ export function openShellSettingsModal(subpath = '') {
   shellui.openModal(url);
 }
 
+/** Opens the FromEdwin payments page in ShellUI settings. */
+export function openPaymentsSettings() {
+  openShellSettingsModal('app-payments');
+}
+
 /** Navigates the parent shell to the embedded admin panel. */
 export function openShellAdmin() {
   shellui.navigate(SHELLUI_URLS.admin);

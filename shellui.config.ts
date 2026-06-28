@@ -38,6 +38,15 @@ const config: ShellUIConfig = {
       requiresAuth: true,
     },
     {
+      label: "Payments",
+      path: "payments",
+      url: `${appUrl.replace(/\/$/, "")}/settings/payments`,
+      settings: `${appUrl.replace(/\/$/, "")}/settings/payments`,
+      icon: "/icons/payments.svg",
+      hidden: true,
+      requiresAuth: true,
+    },
+    {
       label: "Settings",
       path: "settings",
       url: urls.settings,
